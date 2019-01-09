@@ -3,6 +3,7 @@ const WebSocket = require('./websocket/ws.js');
 
 module.exports = class Client extends EventEmitter {
 	constructor	(options = {}) {
+		super();
 		this.ws = new WebSocket(this, options);
 	}
 
