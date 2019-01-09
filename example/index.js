@@ -1,4 +1,4 @@
-const { Client } = require('./src/index.js');
+const { Client } = require('../src/index.js');
 
 const rcon = new Client({
 	ip: '192.0.0.1',
@@ -10,6 +10,13 @@ rcon.login();
 
 rcon.on('connected', () => {
 	console.log(`Connected to ${rcon.ws.ip}:${rcon.ws.port}`);
+
+	// Message, Name, Identifier.
+	rcon.send('serverinfo', 'Artful', 10);
+
+	setTimeout(() => {
+		rcon.destroy();
+	}, 5000);
 });
 
 rcon.on('error', err => {
@@ -23,6 +30,3 @@ rcon.on('disconnect', () => {
 rcon.on('message', message => {
 	console.log(message);
 });
-
-// Message, Name, Identifier.
-rcon.send('echo hello world', 'Artful', 10);

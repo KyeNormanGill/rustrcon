@@ -34,7 +34,16 @@ module.exports = class WebSocket {
 	}
 
 	onMessage(e) {
-		this.client.emit('message', JSON.parse(e));
+		const data = JSON.parse(e.data);
+
+		const payload = {
+			content: JSON.parse(data.Message),
+			Identifier: data.Identifier,
+			Type: data.Type,
+			Stacktrace: data.Stacktrace
+		}
+
+		this.client.emit('message', payload);
 	}
 
 	sendMessage(message, name, identifier) {
@@ -43,5 +52,11 @@ module.exports = class WebSocket {
 			Message: message,
 			Name: name
 		}));
+	}
+
+	close() {
+		if (!this.ws) return;
+		this.ws.close();
+		this.ws = undefined;
 	}
 }
