@@ -1,8 +1,6 @@
 # RustRCON
 Rust RCON client for NodeJS
 
-!!NOT YET PUBLISHED TO NPM!!
-
 `npm install rustrcon`
 or
 `yarn add rustrcon`
