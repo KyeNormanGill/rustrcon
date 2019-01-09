@@ -1,4 +1,4 @@
-# rustrcon
+# RustRCON
 Rust RCON client for NodeJS
 
 !!NOT YET PUBLISHED TO NPM!!
