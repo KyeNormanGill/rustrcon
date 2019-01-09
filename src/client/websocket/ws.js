@@ -34,7 +34,14 @@ module.exports = class WebSocket {
 	}
 
 	onMessage(e) {
-		// Parse and emit.
-		this.client.emit('message', e);
+		this.client.emit('message', JSON.parse(e));
+	}
+
+	sendMessage(message, name, identifier) {
+		this.ws.send(JSON.stringify({
+			Identifier: identifier,
+			Message: message,
+			Name: name
+		}));
 	}
 }

@@ -13,4 +13,8 @@ module.exports = class Client extends EventEmitter {
 	destroy() {
 		this.ws.close(); 
 	}
+
+	send(message, name, identifier) {
+		this.ws.sendMessage(message, name, identifier);
+	}
 }
