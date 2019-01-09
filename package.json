@@ -1,0 +1,11 @@
+{
+  "name": "rustrcon",
+  "version": "1.0.0",
+  "description": "RCON wrapper for rust.",
+  "main": "src/index.js",
+  "author": "Artful",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^6.1.2"
+  }
+}
