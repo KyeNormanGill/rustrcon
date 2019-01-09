@@ -35,6 +35,9 @@ rcon.on('disconnect', () => {
 rcon.on('message', message => {
 	console.log(message);
 });
+
+// Message, Name, Identifier.
+rcon.send('echo hello world', 'Artful', 10);
 ```
 
 ## Contributing
