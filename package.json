@@ -1,6 +1,6 @@
 {
   "name": "rustrcon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "RCON wrapper for rust.",
   "main": "src/index.js",
   "author": "Artful",
