@@ -36,8 +36,17 @@ module.exports = class WebSocket {
 	onMessage(e) {
 		const data = JSON.parse(e.data);
 
+		let content;
+
+		// Some messages are just strings and strings error with JSON.parse so we do both. :D
+		try {
+			content = JSON.parse(data.Message);
+		} catch (e) {
+			content = data.Message;
+		}
+
 		const payload = {
-			content: JSON.parse(data.Message),
+			content,
 			Identifier: data.Identifier,
 			Type: data.Type,
 			Stacktrace: data.Stacktrace
